@@ -1,18 +1,8 @@
-import express from 'express';
 
-const app = express();
+import 'dotenv/config'
 
-app.use(express.json())
+import Server from './models/server'
 
-const PORT = 3000;
+const server = new Server();
 
-app.get('/ping', (_req, res )=>{
-  console.log('Algo');
-  
-  res.send('pong')
-})
-
-app.listen(PORT, ()=>{
-  console.log('Corriendo en!!!', PORT);
-  
-})
+server.listen();
